@@ -1,0 +1,111 @@
+/* General */
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background: #fffafc;
+  color: #333;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  color: #ff7aa2;
+}
+
+/* Loading */
+#loading {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #fffafc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.yarn {
+  width: 50px; height: 50px;
+  border: 5px solid #ff7aa2;
+  border-radius: 50%;
+  border-top: 5px solid transparent;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Hero */
+.hero {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #ffe6f0, #fffafc);
+  position: relative;
+}
+
+.floating-icons {
+  font-size: 2rem;
+  animation: floatIcons 6s linear infinite alternate;
+}
+@keyframes floatIcons {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+
+/* Product Cards */
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.product-card:hover img {
+  transform: scale(1.05) rotate(-2deg);
+}
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Buttons */
+.btn-pink {
+  background: #ff7aa2;
+  color: white;
+  border-radius: 30px;
+  padding: 8px 20px;
+}
+.btn-pink:hover {
+  background: #ff4c8b;
+}
+
+/* Cart */
+.cart {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Flying hearts/icons */
+.fly {
+  position: absolute;
+  font-size: 1.5rem;
+  pointer-events: none;
+  animation: flyCart 1s ease forwards;
+}
+@keyframes flyCart {
+  to {
+    transform: translate(200px, -300px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Footer */
+footer {
+  background: #ffe6f0;
+  margin-top: 50px;
+}
